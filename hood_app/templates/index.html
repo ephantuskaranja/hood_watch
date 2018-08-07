@@ -1,3 +1,39 @@
-{{ title }}
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <button>Recommend</button> <button>Reports</button> <button>Recent</button>
+        </div>
+        <hr>
+        <div class="row">
+            <table>
+                <tr>
+                  <th>Institution |</th>
+                  <th>Dept |</th>
+                  <th>Type |</th>
+                  <th>Description |</th>
+                </tr>
+                <tr>
+                  <td>wert</td>
+                  <td>ert</td>
+                  <td>fgd</td>
+                  <td>fgdtr</td>
+                </tr>
+                <tr>
+                    <td>wert1</td>
+                    <td>ert2</td>
+                    <td>fgd3</td>
+                    <td>fgdtr4</td>
+                  </tr> 
+              </table>
+        </div>
 
-gfghjklhgfdfgfghjhjl
+              <hr>
+        <div class="row">
+            <button>Make Report</button> <button>Make Recommendation</button>
+
+        </div>
+        
+    </div>
+{% endblock %}
