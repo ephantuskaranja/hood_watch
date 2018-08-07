@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from .models import Reports, Recommendation, Hood
 
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -64,3 +64,12 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+@login_required
+def get_reports(request):
+    reps=Reports.objects.all()
+    context = {
+        "reps":reps,
+    }
+    
+    return render(request, 'reports.html', context)
