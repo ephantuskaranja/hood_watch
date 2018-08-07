@@ -1,39 +1,70 @@
-{% extends 'base.html' %}
-{% load bootstrap4 %}
-{% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <button>Recommend</button> <button>Reports</button> <button>Recent</button>
+{% extends 'base.html' %} {% load static %} {% load bootstrap4 %}
+<link rel="stylesheet" href="{% static 'css/hood.css' %}"> {% block content %}
+<div class="container-fluid">
+    <div class="row" id="titles">
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <button>Recommendations</button>
         </div>
-        <hr>
-        <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <button>Reports</button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <button>Recents</button>
+        </div>
+
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <!-- blank div -->
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="table">
             <table>
                 <tr>
-                  <th>Institution |</th>
-                  <th>Dept |</th>
-                  <th>Type |</th>
-                  <th>Description |</th>
+                    <th>Institution</th>
+                    <th>Dept</th>
+                    <th>Type</th>
+                    <th>Description</th>
                 </tr>
                 <tr>
-                  <td>wert</td>
-                  <td>ert</td>
-                  <td>fgd</td>
-                  <td>fgdtr</td>
+                    <td>wert</td>
+                    <td>ert</td>
+                    <td>fgd</td>
+                    <td>fgdtr</td>
                 </tr>
                 <tr>
-                    <td>wert1</td>
-                    <td>ert2</td>
-                    <td>fgd3</td>
-                    <td>fgdtr4</td>
-                  </tr> 
-              </table>
-        </div>
-
-              <hr>
-        <div class="row">
-            <button>Make Report</button> <button>Make Recommendation</button>
+                    <td>wert1ertyuityuifghjvbnv </td>
+                    <td>ert2dfghjk vbnm,</td>
+                    <td>fgd3ertyufgh</td>
+                    <td>fgdtr4wertyuicvbnm</td>
+                </tr>
+            </table>
 
         </div>
-        
+
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <!-- blank div -->
+        </div>
+
     </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <!-- blank -->
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <button>Make Report</button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <button>Make Recommendation</button>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <!-- blank -->
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}
