@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<table>
+        <tr>
+            <th>Institution</th>
+            <th>Dept</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        {% for rec in recs %}
+        <tr>
+            <td>{{ rec.institution_name }}</td>
+            <td>{{ rec.dept }}</td>
+            <td>{{ rec.outstanding }}</td>
+            <td>{{ rec.desc }}</td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+    
+{% endblock %}

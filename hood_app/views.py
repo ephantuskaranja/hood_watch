@@ -73,3 +73,12 @@ def get_reports(request):
     }
     
     return render(request, 'reports.html', context)
+
+@login_required
+def get_recommendations(request):
+    recs=Recommendation.objects.all()
+    context = {
+        "recs":recs,
+    }
+    
+    return render(request, 'recommendations.html', context)
