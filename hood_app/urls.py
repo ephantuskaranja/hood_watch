@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^reports/$', views.get_reports, name='reports'),
     url(r'^recommendations/$', views.get_recommendations, name='recommendations'),
     url(r'^makeReport', views.makeReport, name='make-report'),
+    url(r'^makeRecommendations', views.makeRecommendations, name='make-recommendations'),
 ]

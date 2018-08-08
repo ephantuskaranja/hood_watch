@@ -101,3 +101,21 @@ def makeReport(request):
    
     
     return render(request, 'makeReport.html',{"form":form})
+
+
+@login_required
+def makeRecommendations(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = RecommendationsForm(request.POST)
+        if form.is_valid():
+            recommendation =form.save(commit=False)
+            recommendation.user = current_user
+            recommendation.save()
+            return HttpResponseRedirect('/')
+
+    else:
+        form = RecommendationsForm()
+   
+    
+    return render(request, 'makeRecommendations.html',{"form":form})
