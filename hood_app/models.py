@@ -51,6 +51,9 @@ class Recommendation(models.Model):
     class Meta:
         verbose_name_plural = 'Recommendations'
 
+    def save_recommendation(self):
+        self.save()
+
 
 class Reports(models.Model):
     OUTSTANDING_CHOICES = (

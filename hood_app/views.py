@@ -18,11 +18,15 @@ from django.core.mail import EmailMessage
 # Create your views here.
 @login_required
 def index(request):
+    Recs=Recommendation.objects.all()[:5]
+    Reps=Reports.objects.all()[:5]
     context={
-        "title":'Neighbourhood watch'
+        "title":'Neighbourhood watch',
+        "Recs":Recs,
+        "Reps":Reps
     }
 
-   
+    
     return render(request, 'index.html', context)
 
 

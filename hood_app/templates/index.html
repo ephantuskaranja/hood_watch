@@ -28,18 +28,23 @@
                     <th>Type</th>
                     <th>Description</th>
                 </tr>
+
+                {% for Rec in Recs %}
                 <tr>
-                    <td>ertyf</td>
-                    <td>ert</td>
-                    <td>fgd</td>
-                    <td>fgdtr</td>
+                        <td>{{ Rec.institution_name }}</td>
+                        <td>{{ Rec.dept }}</td>
+                        <td>{{ Rec.outstanding }}</td>
+                        <td>{{ Rec.desc }}</td>
                 </tr>
+                {% endfor %}
+                {% for Rep in Reps %}
                 <tr>
-                    <td>wert1ertyuityuifghjvbnv </td>
-                    <td>ert2dfghjk vbnm,</td>
-                    <td>fgd3ertyufgh</td>
-                    <td>fgdtr4wertyuicvbnm</td>
+                        <td>{{ Rep.institution_name }}</td>
+                        <td>{{ Rep.dept }}</td>
+                        <td>{{ Rep.outstanding }}</td>
+                        <td>{{ Rep.desc }}</td>
                 </tr>
+                {% endfor %}
             </table>
 
         </div>
