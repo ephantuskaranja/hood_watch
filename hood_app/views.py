@@ -5,7 +5,7 @@ from .models import Reports, Recommendation, Hood
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import SignupForm
+from .forms import SignupForm, ReportForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -82,3 +82,13 @@ def get_recommendations(request):
     }
     
     return render(request, 'recommendations.html', context)
+
+
+@login_required
+def makeReport(request):
+    context={
+        "ReportForm":ReportForm
+    }
+   
+    
+    return render(request, 'makeReport.html',context)

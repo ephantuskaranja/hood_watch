@@ -4,8 +4,13 @@ from datetime import datetime
 
 # Create your models here.
 class Hood(models.Model):
+    MAYOR_ROAD = 'MAYOR_ROAD'
+    RONGAI='RONGAI'
+    GATAKA='GATAKA'
+    OLOLUA='OLOLUA'
+
     LOCATION_CHOICES=(
-        ('MAYOR-ROAD', 'Mayor-Road'),
+        ('MAYOR_ROAD', 'Mayor_Road'),
         ('RONGAI', 'rongai'),
         ('GATAKA', 'gataka'),
         ('OLOLUA', 'ololua')

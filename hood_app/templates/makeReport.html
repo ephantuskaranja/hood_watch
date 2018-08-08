@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+<form  action="{% url 'make-report' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form ReportForm %}
+    <input type="submit" value="submit">
+  </form>
+
+</div>
+
+{% endblock %}
