@@ -13,4 +13,5 @@ class ReportForm(forms.ModelForm):
     
     class Meta:
         model = Reports
-        fields = ('institution_name', 'dept', 'location', 'outstanding', 'desc', 'created_at')
+        exclude = ['created_at']
+        fields = ('institution_name', 'dept', 'location', 'outstanding', 'desc')

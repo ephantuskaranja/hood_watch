@@ -77,3 +77,6 @@ class Reports(models.Model):
 
     class Meta:
         verbose_name_plural ='Reports'
+
+    def save_report(self):
+        self.save()

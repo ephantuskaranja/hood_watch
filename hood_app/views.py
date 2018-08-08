@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Reports, Recommendation, Hood
+from django.http import HttpResponseRedirect
 
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -86,9 +87,17 @@ def get_recommendations(request):
 
 @login_required
 def makeReport(request):
-    context={
-        "ReportForm":ReportForm
-    }
+    current_user = request.user
+    if request.method == 'POST':
+        form = ReportForm(request.POST)
+        if form.is_valid():
+            report=form.save(commit=False)
+            report.user = current_user
+            report.save()
+            return HttpResponseRedirect('/')
+
+    else:
+        form = ReportForm()
    
     
-    return render(request, 'makeReport.html',context)
+    return render(request, 'makeReport.html',{"form":form})
